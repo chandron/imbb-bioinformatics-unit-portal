@@ -3,13 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-  (function(){try{
-    var t=localStorage.getItem('bu-theme');
-    var d=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
-    if(t==='dark'||(t===null&&d))document.documentElement.setAttribute('data-theme','dark');
-  }catch(e){}}());
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -129,20 +122,6 @@
 .coming-soon-box p { font-size: 14px; color: var(--text-muted); margin: 0; }
 .coming-soon-box a { color: var(--primary); font-weight: 600; }
 
-[data-theme="dark"] .tool-card-full { background: #161B22; border-color: #30363D; }
-[data-theme="dark"] .tool-card-full:hover { box-shadow: 0 12px 36px rgba(0,0,0,.35); }
-[data-theme="dark"] .tool-name { color: #E6EDF3; }
-[data-theme="dark"] .tool-body p { color: #C9D1D9; }
-[data-theme="dark"] .status-badge.live { background: #0D2010; color: #4ADE80; border-color: #166534; }
-[data-theme="dark"] .status-badge.soon { background: #1A2E47; color: #60A5FA; border-color: #30363D; }
-[data-theme="dark"] .tool-tag { background: #1A2E47; color: #60A5FA; border-color: #30363D; }
-[data-theme="dark"] .tool-footer { border-top-color: #30363D; }
-[data-theme="dark"] .tool-url { color: #8B949E; }
-[data-theme="dark"] .coming-soon-box { background: #1A2E47; border-color: #30363D; }
-[data-theme="dark"] .coming-soon-box h3 { color: #E6EDF3; }
-[data-theme="dark"] .coming-soon-box p { color: #8B949E; }
-[data-theme="dark"] .coming-soon-box a { color: #60A5FA; }
-
 @media (max-width: 700px) {
   .tool-card-full { padding: 24px 20px; }
   .tool-card-header { flex-direction: column; }
@@ -167,7 +146,6 @@
       <a href="tools.html" class="active">Our Tools</a>
       <a href="hpc.html"><i class="fa-solid fa-server" style="font-size:11px;margin-right:3px;"></i>HPC Docs</a>
       <a href="team.html">Team</a>
-      <button class="theme-toggle" id="theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode" title="Toggle dark / light mode"><i class="fa-solid fa-moon" id="theme-icon"></i></button>
       <a href="index.html#contact" class="nav-cta">Submit Request</a>
     </nav>
   </div>
@@ -208,8 +186,8 @@
       </div>
     </div>
     <div class="tool-footer">
-      <span class="tool-url">dsrna-analyzer.org:3000/dsrna-analyzer</span>
-      <a href="http://dsrna-analyzer.org:3000/dsrna-analyzer" target="_blank" rel="noopener" class="btn-launch">
+      <span class="tool-url">dsrna-analyzer.org</span>
+      <a href="https://dsrna-analyzer.org/" target="_blank" rel="noopener" class="btn-launch">
         <i class="fa-solid fa-arrow-up-right-from-square"></i> Launch App
       </a>
     </div>
@@ -224,11 +202,11 @@
         </div>
         <div class="tool-name">dsRNA Specificity App</div>
       </div>
-      <span class="status-badge soon">Coming Soon</span>
+      <span class="status-badge live">Live</span>
     </div>
     <div class="tool-body">
       <p>A companion tool to the dsRNA Analyzer. Where the Analyzer checks safety against non-target organisms, this app screens candidate dsRNA sequences for specificity within the target organism — ensuring the sequence hits the intended gene and avoids off-target effects within the same genome.</p>
-      <p>Currently in development. Contact us to be notified at launch.</p>
+      <p>Developed and hosted by the Bioinformatics Unit at IMBB-FORTH.</p>
       <div class="tool-tags">
         <span class="tool-tag">RNAi</span>
         <span class="tool-tag">dsRNA design</span>
@@ -237,27 +215,28 @@
       </div>
     </div>
     <div class="tool-footer">
-      <span class="tool-url">URL to be announced</span>
-      <a class="btn-launch disabled">
-        <i class="fa-solid fa-clock"></i> In Development
+      <span class="tool-url">bioinformatics.imbb.forth.gr/dsrna-specificity</span>
+      <a href="https://bioinformatics.imbb.forth.gr/dsrna-specificity/" target="_blank" rel="noopener" class="btn-launch">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Launch App
       </a>
     </div>
   </div>
 
-  <!-- Arthropod P450 Docuwiki -->
+  <!-- The Arthropod P450 Enchiridion -->
   <div class="tool-card-full">
     <div class="tool-card-header">
       <div class="tool-title-group">
         <div class="tool-icon-wrap amber">
           <i class="fa-solid fa-bug"></i>
         </div>
-        <div class="tool-name">Arthropod P450 Docuwiki</div>
+        <div class="tool-name">The Arthropod P450 Enchiridion</div>
       </div>
       <span class="status-badge live">Live</span>
     </div>
     <div class="tool-body">
-      <p>A community-maintained resource for arthropod cytochrome P450 (CYP) enzyme nomenclature and sequences. Covers insects, ticks, and other arthropods with standardized naming conventions, sequence alignments, phylogenetic classifications, and links to associated literature.</p>
-      <p>Developed by the Vector Biology and Bioinformatics groups at IMBB-FORTH. Contributions from the arthropod P450 research community are welcome.</p>
+      <p>A curated resource for arthropod cytochrome P450 (CYP) enzyme nomenclature and sequences. Covers insects, ticks, and other arthropods with standardized naming conventions, sequence alignments, phylogenetic classifications, and links to associated literature.</p>
+      <p>Developed and maintained by Drs. Jason Charamis (IMBB-FORTH) and Rene Feyereisen (Ghent University) and hosted at IMBB-FORTH.</p>
+      <p style="font-size:13px;color:var(--text-muted);border-left:3px solid var(--border);padding-left:14px;">Please cite: Charamis, J., Dermauw, W., Van Leeuwen, T., Vontas, J., Feyereisen, R., 2025. The Arthropod P450 Enchiridion: An integrated web resource for research on P450s, <em>Insect Biochemistry and Molecular Biology</em>, 183: 104377.</p>
       <div class="tool-tags">
         <span class="tool-tag">Cytochrome P450</span>
         <span class="tool-tag">Arthropods</span>
@@ -270,7 +249,7 @@
     <div class="tool-footer">
       <span class="tool-url">arthropodp450.eu</span>
       <a href="https://arthropodp450.eu/doku.php?id=introduction_nomenclature" target="_blank" rel="noopener" class="btn-launch">
-        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Wiki
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Resource
       </a>
     </div>
   </div>
