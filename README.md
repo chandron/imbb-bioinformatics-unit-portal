@@ -26,7 +26,8 @@ docker compose up --build -d
 Docker caches dependency installation until `package.json` or
 `package-lock.json` changes, so source-only updates rebuild quickly.
 
-Add the correct network
+Add the correct network:
+
 ```docker network connect   network_app_network   bioinformatics-unit-site-website-1
 ```
 
