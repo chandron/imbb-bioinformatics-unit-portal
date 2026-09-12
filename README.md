@@ -28,7 +28,8 @@ Docker caches dependency installation until `package.json` or
 
 Add the correct network:
 
-```docker network connect   network_app_network   bioinformatics-unit-site-website-1
+```sh
+docker network connect   network_app_network   bioinformatics-unit-site-website-1
 ```
 
 
