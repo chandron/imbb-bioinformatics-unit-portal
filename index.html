@@ -3,13 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>
-  (function(){try{
-    var t=localStorage.getItem('bu-theme');
-    var d=window.matchMedia&&window.matchMedia('(prefers-color-scheme:dark)').matches;
-    if(t==='dark'||(t===null&&d))document.documentElement.setAttribute('data-theme','dark');
-  }catch(e){}}());
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -19,7 +12,6 @@
    Bioinformatics Unit — IMBB-FORTH
    Shared Stylesheet v2 — FORTH Blue palette, modern refresh
    ========================================================= */
-
 
 :root {
   /* FORTH Blue scale */
@@ -417,163 +409,33 @@ img { max-width:100%; display:block; }
   .workflow-steps { grid-template-columns:1fr; }
 }
 
-/* =========================================================
-   DARK MODE — variable overrides & component inversions
-   Applied when <html data-theme="dark">
-   ========================================================= */
-
-[data-theme="dark"] {
-  --bg:            #0D1117;
-  --white:         #161B22;
-  --text:          #E6EDF3;
-  --text-muted:    #8B949E;
-  --border:        #30363D;
-  --card-bg:       #161B22;
-  --primary:       #60A5FA;
-  --primary-dark:  #93C5FD;
-  --primary-light: #1A2E47;
-  --accent:        #FB923C;
-  --accent-light:  #2D1700;
-  --blue-50:       #0D1B2A;
-  --blue-100:      #1A2E47;
-  --teal-lt:       #0D2020;
-  --orange-lt:     #2D1700;
-}
-
 /* Body */
-[data-theme="dark"] body {
-  background-color: #0D1117;
-  background-image: radial-gradient(rgba(96,165,250,.09) 1px, transparent 1px);
-  color: var(--text);
-}
 
 /* Nav */
-[data-theme="dark"] .site-nav {
-  background: rgba(13,17,23,.90);
-  border-bottom-color: #30363D;
-}
-[data-theme="dark"] .nav-links a { color: #8B949E; }
-[data-theme="dark"] .nav-links a:hover,
-[data-theme="dark"] .nav-links a.active {
-  color: #60A5FA; background: #1A2E47;
-}
-[data-theme="dark"] .nav-cta            { background: #1D4ED8 !important; }
-[data-theme="dark"] .nav-cta:hover      { background: #1E40AF !important; }
-[data-theme="dark"] .nav-brand-text     { color: #93C5FD; }
-[data-theme="dark"] .nav-brand-text span{ color: #8B949E; }
 
 /* Theme toggle button */
-.theme-toggle {
-  width: 36px; height: 36px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-muted);
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: all var(--t);
-  font-size: 14px; flex-shrink: 0;
-}
-.theme-toggle:hover {
-  background: var(--primary-light);
-  color: var(--primary);
-  border-color: var(--primary);
-}
 
 /* Page header — already dark gradient, stays the same */
 
 /* Cards */
-[data-theme="dark"] .card { background: #161B22; border-color: #30363D; }
-[data-theme="dark"] .card h3 { color: #E6EDF3; }
-[data-theme="dark"] .card p  { color: #8B949E; }
-[data-theme="dark"] .card-icon { background: #1A2E47; }
 
 /* Resource link cards */
-[data-theme="dark"] .link-card {
-  background: #161B22; border-color: #30363D; color: #C9D1D9;
-}
-[data-theme="dark"] .link-card:hover { border-color: #60A5FA; color: #60A5FA; }
-[data-theme="dark"] .link-icon.enrichment { background: #1A2E47; }
-[data-theme="dark"] .link-icon.browser    { background: #1A2E47; }
-[data-theme="dark"] .link-icon.platform   { background: #0D2020; }
-[data-theme="dark"] .link-icon.viz        { background: #2D1700; }
-[data-theme="dark"] .link-icon.organism   { background: #2A0D10; }
 
 /* Tabs */
-[data-theme="dark"] .tab-bar .tab-btn {
-  background: #161B22; border-color: #30363D; color: #8B949E;
-}
-[data-theme="dark"] .tab-bar .tab-btn:hover { border-color: #60A5FA; color: #60A5FA; }
-[data-theme="dark"] .tab-bar .tab-btn.active {
-  background: #2563EB; border-color: #2563EB; color: #fff;
-}
-[data-theme="dark"] .tab-content.active-tab { background: transparent; }
 
 /* Team */
-[data-theme="dark"] .team-card { background: #161B22; border-color: #30363D; }
-[data-theme="dark"] .team-card h3 { color: #E6EDF3; }
-[data-theme="dark"] .team-card p  { color: #8B949E; }
-[data-theme="dark"] .team-card .role { color: #60A5FA; }
-[data-theme="dark"] .team-card .contact-link { color: #60A5FA; }
-[data-theme="dark"] .team-card .contact-link:hover { color: #FB923C; }
-[data-theme="dark"] .team-avatar { background: #1A2E47; }
 
 /* Workflow steps */
-[data-theme="dark"] .step-num { background: #2563EB; }
-[data-theme="dark"] .step h4  { color: #E6EDF3; }
-[data-theme="dark"] .step p   { color: #8B949E; }
-[data-theme="dark"] .step::after { background: #30363D; }
 
 /* Forms (request.html & shared) */
-[data-theme="dark"] .form-card { background: #161B22; border-color: #30363D; }
-[data-theme="dark"] .form-group label { color: #C9D1D9; }
-[data-theme="dark"] .form-group input,
-[data-theme="dark"] .form-group select,
-[data-theme="dark"] .form-group textarea {
-  background: #0D1117; border-color: #30363D;
-  color: #E6EDF3;
-}
-[data-theme="dark"] .form-group input:focus,
-[data-theme="dark"] .form-group select:focus,
-[data-theme="dark"] .form-group textarea:focus {
-  border-color: #60A5FA; box-shadow: 0 0 0 3px #1A2E47;
-}
 
 /* CTA strip */
-[data-theme="dark"] .cta-strip {
-  background: linear-gradient(135deg, #051428 0%, #0F2E5A 50%, #1a3a6b 100%);
-}
 
 /* Footer */
-[data-theme="dark"] .site-footer { border-top-color: #30363D; color: #8B949E; }
-[data-theme="dark"] .site-footer a { color: #60A5FA; }
 
 /* ── HPC page ─── */
-[data-theme="dark"] .hpc-toc { background: #161B22; border-color: #30363D; }
-[data-theme="dark"] .hpc-toc h4 { color: #8B949E; }
-[data-theme="dark"] .hpc-toc a { color: #8B949E; }
-[data-theme="dark"] .hpc-toc a:hover { color: #60A5FA; background: #1A2E47; }
-[data-theme="dark"] .hpc-body h2 { color: #E6EDF3; border-top-color: #30363D; }
-[data-theme="dark"] .hpc-body h3 { color: #C9D1D9; }
-[data-theme="dark"] .hpc-body h4 { color: #60A5FA; }
-[data-theme="dark"] .hpc-body p  { color: #C9D1D9; }
-[data-theme="dark"] .hpc-body li { color: #C9D1D9; }
-[data-theme="dark"] .hpc-body li strong { color: #60A5FA; }
-[data-theme="dark"] code { background: #1A2E47; color: #93C5FD; }
-[data-theme="dark"] .callout.info   { background: #1A2E47; border-left-color: #60A5FA; color: #C9D1D9; }
-[data-theme="dark"] .callout.warn   { background: #2D1700; border-left-color: #FB923C; color: #C9D1D9; }
-[data-theme="dark"] .callout.danger { background: #2A0D10; border-left-color: #F87171; color: #C9D1D9; }
-[data-theme="dark"] .partition-table th { background: #1D4ED8; }
-[data-theme="dark"] .partition-table td { border-bottom-color: #30363D; color: #C9D1D9; }
-[data-theme="dark"] .partition-table tr:nth-child(even) td { background: #1A2233; }
-[data-theme="dark"] .spec-card { background: #161B22; border-color: #30363D; }
-[data-theme="dark"] .spec-card .spec-label { color: #8B949E; }
-[data-theme="dark"] .spec-card .spec-val   { color: #60A5FA; }
-[data-theme="dark"] .spec-card .spec-sub   { color: #8B949E; }
-[data-theme="dark"] .cheat-item .desc { color: #8B949E; }
 
 /* Services page detail cards */
-[data-theme="dark"] .card > div[style*="primary-light"] { background: #1A2E47 !important; }
-[data-theme="dark"] .card > div[style*="accent-light"]  { background: #2D1700 !important; }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
@@ -605,7 +467,6 @@ img { max-width:100%; display:block; }
   margin-left: 4px;
 }
 .inst-bar a:hover { color: #fff; }
-[data-theme="dark"] .inst-bar { background: #051428; }
 
 /* Hero */
 .hero-wrap {
@@ -780,7 +641,6 @@ img { max-width:100%; display:block; }
 .services-section .svc-icon      { background: rgba(44,111,191,.3); color: #93c5fd; }
 .services-section .svc-link      { color: #93c5fd; }
 .services-section .svc-link:hover{ color: #f97316; }
-
 
 /* ── Toolbox ─── */
 .toolbox-section { background: #dde8f5; padding: 80px 40px; }
@@ -976,6 +836,32 @@ img { max-width:100%; display:block; }
   transition: background .15s, box-shadow .15s;
 }
 .btn-submit:hover { background: var(--b900); box-shadow: 0 4px 16px rgba(27,74,138,.3); }
+.field-error {
+  display: none;
+  font-size: 12px;
+  color: #DC2626;
+  margin-top: 5px;
+  font-weight: 600;
+}
+.field-error.show { display: block; }
+.form-field input.invalid,
+.form-field select.invalid,
+.form-field textarea.invalid {
+  border-color: #DC2626 !important;
+  background: #FEF2F2;
+}
+.form-alert {
+  display: none;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #B91C1C;
+  border-radius: 10px;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.form-alert.show { display: block; }
 #form-success {
   display: none; text-align: center; padding: 32px 16px;
 }
@@ -1039,7 +925,6 @@ img { max-width:100%; display:block; }
       <a href="tools.html">Our Tools</a>
       <a href="hpc.html"><i class="fa-solid fa-server" style="font-size:11px;margin-right:3px;"></i>HPC Docs</a>
       <a href="team.html">Team</a>
-      <button class="theme-toggle" id="theme-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode" title="Toggle dark / light mode"><i class="fa-solid fa-moon" id="theme-icon"></i></button>
       <a href="#contact" class="nav-cta">Submit Request</a>
     </nav>
   </div>
@@ -1192,7 +1077,6 @@ img { max-width:100%; display:block; }
   </div>
 </section>
 
-
 <!-- OUR TOOLS TEASER -->
 <section style="background:#fff;padding:80px 40px;" id="our-tools">
   <div style="max-width:1200px;margin:0 auto;">
@@ -1210,17 +1094,17 @@ img { max-width:100%; display:block; }
         </div>
         <div style="font-size:16px;font-weight:800;color:#0F172A;margin-bottom:8px;">dsRNA Analyzer</div>
         <p style="font-size:13px;color:#5E6880;line-height:1.65;margin-bottom:16px;">Designs dsRNA sequences for RNAi applications, screening candidates against non-target organism databases.</p>
-        <a href="http://dsrna-analyzer.org:3000/dsrna-analyzer" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;color:#1B4A8A;text-decoration:none;">Launch app <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px;"></i></a>
+        <a href="https://dsrna-analyzer.org/" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;color:#1B4A8A;text-decoration:none;">Launch app <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px;"></i></a>
       </div>
 
       <div style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:28px 24px;transition:all .18s;" onmouseover="this.style.boxShadow='0 12px 36px rgba(0,0,0,.1)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='none'">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
           <div style="width:44px;height:44px;border-radius:12px;background:#E6F4F4;color:#0D7C7C;display:flex;align-items:center;justify-content:center;font-size:18px;"><i class="fa-solid fa-crosshairs"></i></div>
-          <span style="background:#E4ECF6;color:#1B4A8A;border:1px solid #C8D8EE;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:100px;">Coming Soon</span>
+          <span style="background:#DCFCE7;color:#15803D;border:1px solid #BBF7D0;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:100px;">Live</span>
         </div>
         <div style="font-size:16px;font-weight:800;color:#0F172A;margin-bottom:8px;">dsRNA Specificity App</div>
         <p style="font-size:13px;color:#5E6880;line-height:1.65;margin-bottom:16px;">Screens dsRNA candidates for off-target hits within the target organism's genome.</p>
-        <a href="tools.html" style="font-size:13px;font-weight:700;color:#1B4A8A;text-decoration:none;">Learn more <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i></a>
+        <a href="https://bioinformatics.imbb.forth.gr/dsrna-specificity/" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;color:#1B4A8A;text-decoration:none;">Launch app <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px;"></i></a>
       </div>
 
       <div style="background:#fff;border:1px solid #E2E8F0;border-radius:20px;padding:28px 24px;transition:all .18s;" onmouseover="this.style.boxShadow='0 12px 36px rgba(0,0,0,.1)';this.style.transform='translateY(-3px)'" onmouseout="this.style.boxShadow='none';this.style.transform='none'">
@@ -1228,9 +1112,9 @@ img { max-width:100%; display:block; }
           <div style="width:44px;height:44px;border-radius:12px;background:#FDF2E9;color:#D4620A;display:flex;align-items:center;justify-content:center;font-size:18px;"><i class="fa-solid fa-bug"></i></div>
           <span style="background:#DCFCE7;color:#15803D;border:1px solid #BBF7D0;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:100px;">Live</span>
         </div>
-        <div style="font-size:16px;font-weight:800;color:#0F172A;margin-bottom:8px;">Arthropod P450 Docuwiki</div>
+        <div style="font-size:16px;font-weight:800;color:#0F172A;margin-bottom:8px;">The Arthropod P450 Enchiridion</div>
         <p style="font-size:13px;color:#5E6880;line-height:1.65;margin-bottom:16px;">Nomenclature and sequence resource for arthropod cytochrome P450 enzymes.</p>
-        <a href="https://arthropodp450.eu/doku.php?id=introduction_nomenclature" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;color:#1B4A8A;text-decoration:none;">Open wiki <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px;"></i></a>
+        <a href="https://arthropodp450.eu/doku.php?id=introduction_nomenclature" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;color:#1B4A8A;text-decoration:none;">Open resource <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px;"></i></a>
       </div>
 
     </div>
@@ -1265,9 +1149,6 @@ img { max-width:100%; display:block; }
     <div id="no-tools"><i class="fa-solid fa-circle-exclamation" style="font-size:28px;display:block;margin-bottom:8px;"></i>No tools match your search.</div>
   </div>
 </section>
-
-
-
 
 <!-- HPC TEASER -->
 <section style="background:linear-gradient(135deg,#0F2E5A 0%,#1B4A8A 60%,#2C6FBF 100%);padding:72px 40px;position:relative;overflow:hidden;" id="hpc">
@@ -1344,21 +1225,24 @@ img { max-width:100%; display:block; }
       <div id="request-form">
         <div class="form-row-2">
           <div class="form-field">
-            <label>Full Name *</label>
-            <input type="text" placeholder="e.g. Maria Papadopoulou">
+            <label for="rf-name">Full Name *</label>
+            <input type="text" id="rf-name" placeholder="e.g. Maria Papadopoulou">
+            <span class="field-error" id="err-name"></span>
           </div>
           <div class="form-field">
-            <label>Email *</label>
-            <input type="email" placeholder="your@imbb.forth.gr">
+            <label for="rf-email">Email *</label>
+            <input type="email" id="rf-email" placeholder="your@imbb.forth.gr">
+            <span class="field-error" id="err-email"></span>
           </div>
         </div>
         <div class="form-field">
-          <label>Lab / PI Name *</label>
-          <input type="text" placeholder="e.g. [PI Name] Lab, IMBB">
+          <label for="rf-lab">Lab / PI Name *</label>
+          <input type="text" id="rf-lab" placeholder="e.g. [PI Name] Lab, IMBB">
+          <span class="field-error" id="err-lab"></span>
         </div>
         <div class="form-field">
-          <label>Analysis Type *</label>
-          <select>
+          <label for="rf-type">Analysis Type *</label>
+          <select id="rf-type">
             <option value="">Select…</option>
             <option>RNA-seq (bulk)</option>
             <option>RNA-seq (single-cell)</option>
@@ -1366,19 +1250,22 @@ img { max-width:100%; display:block; }
             <option>Functional Enrichment</option>
             <option>Other</option>
           </select>
+          <span class="field-error" id="err-type"></span>
         </div>
         <div class="form-field">
-          <label>Project Description *</label>
-          <textarea placeholder="Briefly describe your experiment and what you need…"></textarea>
+          <label for="rf-desc">Project Description *</label>
+          <textarea id="rf-desc" placeholder="Briefly describe your experiment and what you need…"></textarea>
+          <span class="field-error" id="err-desc"></span>
         </div>
+        <div class="form-alert" id="form-alert"></div>
         <button class="btn-submit" onclick="handleSubmit(event)">
           <i class="fa-solid fa-paper-plane"></i> Submit Request
         </button>
       </div>
       <div id="form-success">
         <i class="fa-solid fa-circle-check"></i>
-        <h4>Request received!</h4>
-        <p>We'll be in touch within 2–3 working days.</p>
+        <h4>Almost there — send the email</h4>
+        <p>Your email app should have opened with the request ready to send. Please press send to complete your submission.<br><br>If nothing opened, email us directly at <a href="mailto:imbb_bioinfo@imbb.forth.gr" style="color:#1B4A8A;font-weight:700;">imbb_bioinfo@imbb.forth.gr</a>.</p>
         <button onclick="resetForm()" style="margin-top:16px;background:none;border:1px solid #E2E8F0;border-radius:10px;padding:8px 20px;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;">Submit Another →</button>
       </div>
     </div>
@@ -1402,30 +1289,6 @@ img { max-width:100%; display:block; }
 </footer>
 
 <script>
-/* ── Dark mode ───────────────────────────────────────────── */
-function toggleDarkMode() {
-  var html = document.documentElement;
-  var icon = document.getElementById('theme-icon');
-  var isDark = html.getAttribute('data-theme') === 'dark';
-  if (isDark) {
-    html.removeAttribute('data-theme');
-    if (icon) icon.className = 'fa-solid fa-moon';
-    try { localStorage.setItem('bu-theme','light'); } catch(e) {}
-  } else {
-    html.setAttribute('data-theme','dark');
-    if (icon) icon.className = 'fa-solid fa-sun';
-    try { localStorage.setItem('bu-theme','dark'); } catch(e) {}
-  }
-}
-document.addEventListener('DOMContentLoaded', function() {
-  var icon = document.getElementById('theme-icon');
-  if (icon && document.documentElement.getAttribute('data-theme') === 'dark') {
-    icon.className = 'fa-solid fa-sun';
-  }
-  var toggle = document.querySelector('.nav-toggle');
-  var links  = document.querySelector('.nav-links');
-  if (toggle && links) toggle.addEventListener('click', function() { links.classList.toggle('open'); });
-});
 
 /* ── TOOLS DATA ────────────────────────────────────────── */
 const TOOLS = [
@@ -1536,145 +1399,103 @@ function applyFilters() {
 }
 
 /* ── CONTACT FORM ───────────────────────────────────────── */
+const UNIT_EMAIL = 'imbb_bioinfo@imbb.forth.gr';
+
+const RF_FIELDS = [
+  { id:'rf-name',  err:'err-name',  label:'your full name' },
+  { id:'rf-email', err:'err-email', label:'your email address' },
+  { id:'rf-lab',   err:'err-lab',   label:'your lab or PI name' },
+  { id:'rf-type',  err:'err-type',  label:'an analysis type' },
+  { id:'rf-desc',  err:'err-desc',  label:'a project description' }
+];
+
+function clearErrors() {
+  RF_FIELDS.forEach(function(f) {
+    document.getElementById(f.id).classList.remove('invalid');
+    var e = document.getElementById(f.err);
+    e.textContent = '';
+    e.classList.remove('show');
+  });
+  var alertBox = document.getElementById('form-alert');
+  alertBox.textContent = '';
+  alertBox.classList.remove('show');
+}
+
+function showError(fieldId, errId, message) {
+  document.getElementById(fieldId).classList.add('invalid');
+  var e = document.getElementById(errId);
+  e.textContent = message;
+  e.classList.add('show');
+}
+
 function handleSubmit(e) {
   e.preventDefault();
+  clearErrors();
+
+  var missing = [];
+
+  RF_FIELDS.forEach(function(f) {
+    var val = document.getElementById(f.id).value.trim();
+    if (!val) {
+      showError(f.id, f.err, 'Please enter ' + f.label + '.');
+      missing.push(f);
+    }
+  });
+
+  // Email format check (only if something was entered)
+  var emailVal = document.getElementById('rf-email').value.trim();
+  if (emailVal && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+    showError('rf-email', 'err-email', 'Please enter a valid email address.');
+    if (missing.indexOf('rf-email') === -1) missing.push({ id:'rf-email' });
+  }
+
+  // Description length check
+  var descVal = document.getElementById('rf-desc').value.trim();
+  if (descVal && descVal.length < 20) {
+    showError('rf-desc', 'err-desc', 'Please give a little more detail (at least 20 characters).');
+    missing.push({ id:'rf-desc' });
+  }
+
+  if (missing.length) {
+    var alertBox = document.getElementById('form-alert');
+    alertBox.textContent = missing.length === 1
+      ? 'Please correct the highlighted field before submitting.'
+      : 'Please complete the ' + missing.length + ' highlighted fields before submitting.';
+    alertBox.classList.add('show');
+    document.getElementById(missing[0].id).focus();
+    return;
+  }
+
+  // All valid — compose the email
+  var name  = document.getElementById('rf-name').value.trim();
+  var email = document.getElementById('rf-email').value.trim();
+  var lab   = document.getElementById('rf-lab').value.trim();
+  var type  = document.getElementById('rf-type').value.trim();
+  var desc  = document.getElementById('rf-desc').value.trim();
+
+  var subject = 'Project request: ' + type + ' — ' + lab;
+  var body =
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n' +
+    'Lab / PI: ' + lab + '\n' +
+    'Analysis type: ' + type + '\n\n' +
+    'Project description:\n' + desc + '\n';
+
+  window.location.href = 'mailto:' + UNIT_EMAIL +
+    '?subject=' + encodeURIComponent(subject) +
+    '&body=' + encodeURIComponent(body);
+
   document.getElementById('request-form').style.display = 'none';
   document.getElementById('form-success').style.display  = 'block';
 }
+
 function resetForm() {
+  RF_FIELDS.forEach(function(f) { document.getElementById(f.id).value = ''; });
+  clearErrors();
   document.getElementById('request-form').style.display = 'block';
   document.getElementById('form-success').style.display  = 'none';
 }
 </script>
-
-<style id="dark-mode-index">
-/* Index-page dark mode overrides */
-[data-theme="dark"] body {
-  background-image: radial-gradient(rgba(96,165,250,.09) 1px, transparent 1px);
-}
-/* Hero */
-[data-theme="dark"] .hero-wrap {
-  background: linear-gradient(160deg, #0D1B2A 0%, #0D1117 45%, #0D1B2A 100%) !important;
-}
-[data-theme="dark"] .hero-wrap h1     { color: #E6EDF3; }
-[data-theme="dark"] .hero-wrap > div > p { color: #8B949E; }
-[data-theme="dark"] .hero-badge {
-  background: #1A2E47; border-color: #30363D; color: #60A5FA;
-}
-[data-theme="dark"] .hero-badge .dot  { background: #60A5FA; }
-[data-theme="dark"] .hero-stat-num    { color: #E6EDF3; }
-[data-theme="dark"] .hero-stat-lbl    { color: #64748B; }
-[data-theme="dark"] .hero-stats       { border-top-color: #30363D; }
-/* Workflow hero card */
-[data-theme="dark"] .whc {
-  background: #161B22 !important;
-  border-color: #30363D !important;
-  box-shadow: 0 8px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(96,165,250,.08) !important;
-}
-[data-theme="dark"] .whc-header { border-bottom-color: #30363D !important; }
-[data-theme="dark"] .whc-eyebrow { color: #8B949E !important; }
-[data-theme="dark"] .whc-title { color: #E6EDF3 !important; }
-[data-theme="dark"] .whc-step { background: #1C2333 !important; border-color: #30363D !important; }
-[data-theme="dark"] .whc-step:hover { background: #1A2E47 !important; border-color: #3B5277 !important; }
-[data-theme="dark"] .whc-step-num  { color: #8B949E !important; }
-[data-theme="dark"] .whc-step-name { color: #E6EDF3 !important; }
-[data-theme="dark"] .whc-tag       { background: #1A2E47 !important; color: #60A5FA !important; }
-[data-theme="dark"] .whc-tag-result { background: #2D1700 !important; color: #FB923C !important; }
-[data-theme="dark"] .whc-connector::before { background: #93C5FD !important; opacity: .75 !important; }
-[data-theme="dark"] .whc-connector::after  { border-top-color: #93C5FD !important; opacity: .75 !important; }
-[data-theme="dark"] .whc-footer { border-top-color: #30363D !important; }
-[data-theme="dark"] .whc-footer span { color: #8B949E !important; }
-/* Services (already dark — slight adjustment) */
-[data-theme="dark"] .services-section { background: #051428 !important; }
-[data-theme="dark"] .services-section .svc-card {
-  background: rgba(255,255,255,.05) !important;
-  border-color: rgba(255,255,255,.09) !important;
-}
-[data-theme="dark"] .services-section .svc-card:hover {
-  background: rgba(255,255,255,.09) !important;
-}
-/* Toolbox */
-[data-theme="dark"] .toolbox-section  { background: #0D1117 !important; }
-[data-theme="dark"] .toolbox-filter-bar {
-  background: #161B22 !important; border-color: #30363D !important;
-}
-[data-theme="dark"] #tool-search {
-  background: #0D1117 !important; border-color: #30363D !important; color: #E6EDF3 !important;
-}
-[data-theme="dark"] #tool-search::placeholder { color: #8B949E; }
-[data-theme="dark"] .cat-btn {
-  background: #161B22 !important; border-color: #30363D !important; color: #8B949E !important;
-}
-[data-theme="dark"] .cat-btn:hover  { border-color: #60A5FA !important; color: #60A5FA !important; }
-[data-theme="dark"] .cat-btn.active { background: #2563EB !important; border-color: #2563EB !important; color: #fff !important; }
-[data-theme="dark"] .tool-card {
-  background: #161B22 !important; border-color: #30363D !important;
-}
-[data-theme="dark"] .tool-card:hover {
-  border-color: #30363D !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,.4) !important;
-}
-[data-theme="dark"] .tool-card h4 { color: #E6EDF3 !important; }
-[data-theme="dark"] .tool-card p  { color: #8B949E !important; }
-[data-theme="dark"] .tool-card a  { color: #60A5FA !important; }
-[data-theme="dark"] .tool-card a:hover { color: #FB923C !important; }
-[data-theme="dark"] .tool-badge.functional { background: #1A2E47 !important; color: #93C5FD !important; }
-[data-theme="dark"] .tool-badge.genomics   { background: #0D2020 !important; color: #5EEAD4 !important; }
-[data-theme="dark"] .tool-badge.platform   { background: #0D2010 !important; color: #4ADE80 !important; }
-[data-theme="dark"] .tool-badge.viz        { background: #2D1700 !important; color: #FB923C !important; }
-[data-theme="dark"] .tool-badge.organism   { background: #2A0D10 !important; color: #F87171 !important; }
-[data-theme="dark"] #no-tools { color: #8B949E !important; }
-[data-theme="dark"] .tmpl-btn.inflam {
-  background: #2D1700 !important; border-color: #92400E !important; color: #FB923C !important;
-}
-[data-theme="dark"] .tmpl-btn.cycle  {
-  background: #0D2020 !important; border-color: #0E7490 !important; color: #22D3EE !important;
-}
-[data-theme="dark"] .btn-run { background: #1E3A5F !important; }
-[data-theme="dark"] .btn-run:hover { background: #1D4ED8 !important; }
-[data-theme="dark"] .fdr-badge { background: #0D2010 !important; color: #4ADE80 !important; }
-[data-theme="dark"] .enrich-empty { color: #30363D !important; }
-[data-theme="dark"] .enrich-empty p { color: #8B949E !important; }
-[data-theme="dark"] .enrich-bar-top .pw   { color: #C9D1D9 !important; }
-[data-theme="dark"] .enrich-bar-top .pval { color: #8B949E !important; }
-[data-theme="dark"] .enrich-track { background: #1E293B !important; }
-[data-theme="dark"] .enrich-fill  {
-  background: linear-gradient(90deg, #2563EB, #60A5FA) !important;
-}
-[data-theme="dark"] .enrich-genes { color: #8B949E !important; }
-[data-theme="dark"] .btn-enrichr {
-  background: #1A2E47 !important; color: #60A5FA !important; border-color: #30363D !important;
-}
-[data-theme="dark"] .btn-enrichr:hover { background: #1D4ED8 !important; color: #fff !important; }
-/* Contact */
-[data-theme="dark"] .contact-section { background: #0D1117 !important; }
-[data-theme="dark"] .contact-left h2 { color: #E6EDF3; }
-[data-theme="dark"] .contact-left p  { color: #8B949E; }
-[data-theme="dark"] .ci-icon { background: #1A2E47 !important; }
-[data-theme="dark"] .ci-label { color: #64748B !important; }
-[data-theme="dark"] .ci-value { color: #C9D1D9 !important; }
-[data-theme="dark"] .ci-value a { color: #60A5FA !important; }
-[data-theme="dark"] .contact-form-card {
-  background: #161B22 !important; border-color: #30363D !important;
-}
-[data-theme="dark"] .contact-form-card h3 { color: #E6EDF3 !important; }
-[data-theme="dark"] .contact-form-card .sub { color: #8B949E !important; }
-[data-theme="dark"] .form-field label { color: #C9D1D9 !important; }
-[data-theme="dark"] .form-field input,
-[data-theme="dark"] .form-field select,
-[data-theme="dark"] .form-field textarea {
-  background: #0D1117 !important; border-color: #30363D !important; color: #E6EDF3 !important;
-}
-[data-theme="dark"] .form-field input:focus,
-[data-theme="dark"] .form-field select:focus,
-[data-theme="dark"] .form-field textarea:focus {
-  border-color: #60A5FA !important; box-shadow: 0 0 0 3px #1A2E47 !important;
-}
-[data-theme="dark"] .btn-submit { background: #1D4ED8 !important; }
-[data-theme="dark"] .btn-submit:hover { background: #1E40AF !important; }
-[data-theme="dark"] #form-success h4 { color: #E6EDF3 !important; }
-[data-theme="dark"] #form-success p  { color: #8B949E !important; }
-</style>
 
 </body>
 </html>
